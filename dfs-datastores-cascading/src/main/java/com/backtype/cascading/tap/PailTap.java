@@ -269,7 +269,7 @@ public class PailTap extends Hfs {
 
   @Override
   public boolean commitResource(JobConf conf) throws IOException {
-    Pail p = Pail.create(_pailRoot, ((PailScheme) getScheme()).getSpec(), false);
+    Pail p = Pail.create(FileSystem.get(conf), _pailRoot, ((PailScheme) getScheme()).getSpec(), false);
     FileSystem fs = p.getFileSystem();
     Path tmpPath = new Path(_pailRoot, "_temporary");
     if (fs.exists(tmpPath)) {
