@@ -179,7 +179,7 @@ public class SequenceFileFormat implements PailFormat {
             List<InputSplit> ret = new ArrayList<InputSplit>();
             Path[] roots = FileInputFormat.getInputPaths(job);
             for(int i=0; i < roots.length; i++) {
-                _currPail = new Pail(roots[i].toString());
+                _currPail = new Pail(roots[i].toString(), job);
                 InputSplit[] splits = super.getSplits(job, numSplits);
                 for(InputSplit split: splits) {
                     ret.add(new PailInputSplit(_currPail.getFileSystem(), _currPail.getInstanceRoot(), _currPail.getSpec(), job, (FileSplit) split));
