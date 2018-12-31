@@ -10,7 +10,7 @@
                  [jvyaml/jvyaml "1.0.0"]
                  [com.google.guava/guava "13.0"]
                  [junit/junit "4.12" :scope "test"]
-                 [com.backtype/dfs-datastores-util ~VERSION :scope "test"]
+                 [com.backtype/dfs-datastores-util ~VERSION]
                  ]
   :deploy-repositories {"releases" {:url "https://nexus.criteo.prod/content/repositories/criteo.releases/"
                                     :sign-releases false}
@@ -31,7 +31,7 @@
                   [:url "http://twitter.com/sritchie"]]]
   :source-paths ["src/main/java"]
   :test-paths ["src/test/java"]
-  :javac-options ["-source" "1.7" "-target" "1.7"]
+  :javac-options ["-source" "1.8" "-target" "1.8"]
   :java-source-paths ["src/main/java" "src/test/java"]
   :junit ["src/test/java"]
   :profiles {:dev
